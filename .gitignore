@@ -1,0 +1,12 @@
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Logs
+*.log
+
+# Editor/IDE
+.idea/
+.vscode/*
+!.vscode/settings.json
