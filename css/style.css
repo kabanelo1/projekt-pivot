@@ -128,6 +128,25 @@ main {
   line-height: 1;
 }
 
+.social-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+  flex-shrink: 0;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.social-icon--discord {
+  -webkit-mask-image: url("../images/discord_5968898.png");
+  mask-image: url("../images/discord_5968898.png");
+}
+
 .nav__social a:hover {
   color: #dfe76c;
   border-color: rgba(223, 231, 108, 0.4);
@@ -395,6 +414,35 @@ main {
   color: #dfe76c;
   font-size: 0.9rem;
   font-weight: 600;
+}
+
+.video-slide {
+  min-height: 0;
+}
+
+.video-slider {
+  max-width: 780px;
+  margin-inline: auto;
+}
+
+.video-slide__frame {
+  margin: 0;
+  margin-inline: auto;
+  width: min(100%, 420px);
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #000;
+  aspect-ratio: 9 / 16;
+  max-height: min(68vh, 740px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.video-slide__frame video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
 }
 
 .testimonial-slider__controls {
@@ -860,7 +908,7 @@ main > .section:first-of-type {
 .footer__meta {
   margin: 0;
   color: rgba(247, 248, 245, 0.65);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   letter-spacing: 0.03em;
 }
 
@@ -1709,6 +1757,15 @@ select {
   .logo-rail__item img {
     height: 30px;
     max-width: 120px;
+  }
+
+  .video-slider {
+    max-width: 100%;
+  }
+
+  .video-slide__frame {
+    width: min(100%, 360px);
+    max-height: min(62vh, 620px);
   }
 }
 
