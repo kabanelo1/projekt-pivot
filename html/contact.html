@@ -66,11 +66,15 @@
       <div class="contact__form contact__links">
         <figure class="media-frame"><img src="../images/Assetto Corsa Competizione Screenshot 2024.10.03 - 23.11.52.08.png" alt="Contact Pivot Media" loading="lazy" onerror="this.style.display='none'" /></figure>
         <p><strong>Send a quick message:</strong></p>
-        <form class="contact-form" action="https://formsubmit.co/oscar@pivotmedia.eu" method="POST">
+        <form class="contact-form" action="https://formsubmit.co/ciaputaradek@gmail.com" method="POST">
+          <input type="hidden" name="_captcha" value="true" />
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" />
+          <input type="hidden" name="_subject" value="New Pivot Media Contact Form Submission" />
+          <input type="hidden" name="_template" value="table" />
           <div class="form-row">
             <label>
               Full name
-              <input type="text" name="full_name" autocomplete="name" required />
+              <input type="text" name="full_name" autocomplete="name" minlength="2" required />
             </label>
             <label>
               Email
@@ -111,7 +115,7 @@
             </label>
             <label>
               Phone number
-              <input type="tel" name="phone" autocomplete="tel" placeholder="Your number without country code" />
+              <input type="tel" name="phone" autocomplete="tel" inputmode="tel" minlength="6" placeholder="Your number without country code" required />
             </label>
           </div>
 
