@@ -45,6 +45,37 @@ body.nav-open {
   overflow: hidden;
 }
 
+body.low-motion::before {
+  display: none;
+}
+
+body.low-motion .section,
+body.low-motion .card,
+body.low-motion .card ul li,
+body.low-motion .stat,
+body.low-motion .eyebrow,
+body.low-motion .btn--primary,
+body.low-motion .hero::after,
+body.low-motion .page-transition__logo {
+  animation: none !important;
+}
+
+body.low-motion .section {
+  opacity: 1 !important;
+}
+
+body.low-motion .card,
+body.low-motion .stat,
+body.low-motion .media-frame,
+body.low-motion .btn,
+body.low-motion .nav-link,
+body.low-motion a,
+body.low-motion input,
+body.low-motion textarea,
+body.low-motion select {
+  transition: none !important;
+}
+
 img {
   max-width: 100%;
   display: block;
