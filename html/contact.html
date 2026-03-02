@@ -71,7 +71,7 @@
           <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" />
           <input type="hidden" name="_subject" value="New Pivot Media Contact Form Submission" />
           <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_next" id="formNextUrl" value="" />
+          <input type="hidden" name="_next" value="https://kabanelo1.github.io/projekt-pivot/html/contact.html?sent=1" />
           <div class="form-row">
             <label>
               Full name
@@ -172,20 +172,12 @@
     const yearTarget = document.getElementById("year");
     if (yearTarget) yearTarget.textContent = new Date().getFullYear();
     const contactForm = document.getElementById("contactForm");
-    const formNextUrl = document.getElementById("formNextUrl");
-
-    if (contactForm instanceof HTMLFormElement && formNextUrl instanceof HTMLInputElement) {
-      const nextUrl = new URL(window.location.href);
-      nextUrl.searchParams.set("sent", "1");
-      formNextUrl.value = nextUrl.toString();
-
-      if (window.location.search.includes("sent=1")) {
-        const successNote = document.createElement("p");
-        successNote.textContent = "Message sent successfully. We will reply within one business day.";
-        successNote.style.color = "#dfe76c";
-        successNote.style.margin = "0.25rem 0 0";
-        contactForm.prepend(successNote);
-      }
+    if (contactForm instanceof HTMLFormElement && window.location.search.includes("sent=1")) {
+      const successNote = document.createElement("p");
+      successNote.textContent = "Message sent successfully. We will reply within one business day.";
+      successNote.style.color = "#dfe76c";
+      successNote.style.margin = "0.25rem 0 0";
+      contactForm.prepend(successNote);
     }
 
     const navRoot = document.querySelector(".nav");
