@@ -66,11 +66,12 @@
       <div class="contact__form contact__links">
         <figure class="media-frame"><img src="../images/Assetto Corsa Competizione Screenshot 2024.10.03 - 23.11.52.08.png" alt="Contact Pivot Media" loading="lazy" onerror="this.style.display='none'" /></figure>
         <p><strong>Send a quick message:</strong></p>
-        <form class="contact-form" action="https://formsubmit.co/ciaputaradek@gmail.com" method="POST">
+        <form class="contact-form" id="contactForm" action="https://formsubmit.co/ciaputaradek@gmail.com" method="POST">
           <input type="hidden" name="_captcha" value="true" />
           <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" />
           <input type="hidden" name="_subject" value="New Pivot Media Contact Form Submission" />
           <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" id="formNextUrl" value="" />
           <div class="form-row">
             <label>
               Full name
@@ -170,6 +171,23 @@
   <script>
     const yearTarget = document.getElementById("year");
     if (yearTarget) yearTarget.textContent = new Date().getFullYear();
+    const contactForm = document.getElementById("contactForm");
+    const formNextUrl = document.getElementById("formNextUrl");
+
+    if (contactForm instanceof HTMLFormElement && formNextUrl instanceof HTMLInputElement) {
+      const nextUrl = new URL(window.location.href);
+      nextUrl.searchParams.set("sent", "1");
+      formNextUrl.value = nextUrl.toString();
+
+      if (window.location.search.includes("sent=1")) {
+        const successNote = document.createElement("p");
+        successNote.textContent = "Message sent successfully. We will reply within one business day.";
+        successNote.style.color = "#dfe76c";
+        successNote.style.margin = "0.25rem 0 0";
+        contactForm.prepend(successNote);
+      }
+    }
+
     const navRoot = document.querySelector(".nav");
     const navToggle = document.querySelector(".nav__toggle");
     const navMenu = document.getElementById("navMenu");
