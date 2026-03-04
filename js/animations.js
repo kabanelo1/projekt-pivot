@@ -3,7 +3,6 @@ const isMobileLike = window.matchMedia("(max-width: 900px), (pointer: coarse)").
 const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 const shouldUseLowMotion = isReducedMotion || isMobileLike;
 
-// Mouse glow is desktop-only to avoid touch-scroll jank on mobile GPUs.
 if (!shouldUseLowMotion && canHover) {
   document.addEventListener("mousemove", (event) => {
     const body = document.body;
